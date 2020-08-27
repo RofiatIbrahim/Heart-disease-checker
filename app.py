@@ -62,7 +62,7 @@ def predict_heart_disease(age, sex, cp, trestbps, chol, fbs, restecg, thalach, e
 
 
 def main():
-    st.title('Heart Disease Check')
+    st.title('Heart Disease Checker')
     html_temp = '''
     <div style ='background_color:pink;padding:10px'>
     <h2 style ='color:white;text-align:center;'>Streamlit Heart Disease Check ML App </h2>
