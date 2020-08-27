@@ -5,7 +5,6 @@ scikit-learn==0.22.1
 scipy>=0.15.1
 seaborn
 matplotlib>=1.4.3
-Werkzeug==0.15.5
 MarkupSafe==1.1.1
 
 
