@@ -12,7 +12,7 @@ import streamlit as st
 
 from PIL import Image
 
-pickle_in = open('https://github.com/RofiatIbrahim/Heart-disease-checker/blob/master/model.pkl','rb')
+pickle_in = open('model.pkl','rb')
 model = pickle.load(pickle_in)
 
 def welcome():
