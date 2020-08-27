@@ -5,7 +5,6 @@ Created on Thu Aug 27 03:27:50 2020
 @author: Rofiat
 """
 
-
 import numpy as np
 import pickle
 import pandas as pd
@@ -13,11 +12,13 @@ import streamlit as st
 
 from PIL import Image
 
-pickle_in = open('model.pkl','rb')
+pickle_in = open('https://github.com/RofiatIbrahim/Heart-disease-checker/blob/master/model.pkl','rb')
 model = pickle.load(pickle_in)
 
 def welcome():
     return 'You are welcome'
+
+
 
 def predict_heart_disease(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal):
     '''
