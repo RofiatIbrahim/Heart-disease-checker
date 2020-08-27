@@ -23,39 +23,37 @@ def welcome():
 def predict_heart_disease(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal):
     '''
 
-    Parameters
+   Parameters
     ----------
-    age : TYPE
-        DESCRIPTION.
-    sex : TYPE
-        DESCRIPTION.
-    cp : TYPE
-        DESCRIPTION.
-    trestbps : TYPE
-        DESCRIPTION.
-    chol : TYPE
-        DESCRIPTION.
-    fbs : TYPE
-        DESCRIPTION.
-    restecg : TYPE
-        DESCRIPTION.
-    thalach : TYPE
-        DESCRIPTION.
-    exang : TYPE
-        DESCRIPTION.
-    oldpeak : TYPE
-        DESCRIPTION.
-    slope : TYPE
-        DESCRIPTION.
-    ca : TYPE
-        DESCRIPTION.
-    thal : TYPE
-        DESCRIPTION.
+    age : int
+          Age of the user
+    sex : int
+          Male or Female
+    cp : int
+        chest pain type  
+    trestbps : int
+        resting blood pressure
+    chol : int
+        serum cholesterol in mg/dl
+    fbs : int
+        fasting blood sugar > 120 mg/dl
+    restecg : int
+        resting electrocardiographic results
+    thalach :int
+        maximum heart rate achieved
+    exang : int
+        exercise induced anginahh
+    oldpeak : int
+        ST depression induced by exercise relative to stress
+    slope : int
+        The slope of the peak exercise segment
+    ca : int
+        number of major vessels coloured by flourosopy
+    thal : int
+        3-normal, 6-fixed defect, 7-reverable defect
 
     Returns
-    -------
-    None.
-
+     Prediction 
     '''
     prediction = model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
     print(prediction)
@@ -71,19 +69,19 @@ def main():
     </div>
     '''
     st.markdown(html_temp, unsafe_allow_html = True)
-    age = st.text_input('age','Enter Here')
-    sex = st.text_input('sex','Enter Here')
-    cp = st.text_input('cp','Enter Here')  
-    trestbps = st.text_input('trestbps','Enter Here')
-    chol = st.text_input('chol','Enter Here')
-    fbs = st.text_input('fbs','Enter Here')
-    restecg = st.text_input('restecg','Enter Here')
-    thalach = st.text_input('thalach','Enter Here')
-    exang = st.text_input('exang','Enter Here')
-    oldpeak = st.text_input('oldpeak','Enter Here')
-    slope = st.text_input('slope','Enter Here')    
-    ca = st.text_input('ca','Enter Here')
-    thal = st.text_input('thal','Enter Here')
+    age = st.text_input('Age','  ')
+    sex = st.text_input('Sex|1-Male; 0-Female','  ')
+    cp = st.text_input('chest pain type(cp)','  ')  
+    trestbps = st.text_input('resting blood pressure(restecg)','  ')
+    chol = st.text_input('serum cholesterol','  ')
+    fbs = st.text_input('fasting blood sugar(fbs)|1-True; 0-False','  ')
+    restecg = st.text_input('resting electrocardiographic results(restecg)','  ')
+    thalach = st.text_input('max heart rate achieved(thalach)','  ')
+    exang = st.text_input('exercise induced angina(exang)|1-yes; 0-no','   ')
+    oldpeak = st.text_input('ST depression induced by exercise relative to rest(oldpeak)','  ')
+    slope = st.text_input('slope|1-upsloping, 2-flat, 3-downsloping','  ')    
+    ca = st.text_input('number of major cells colored by florosopy(ca)','  ')
+    thal = st.text_input('thal|3-normal, 6-fixed defect, 7-reversable defect','  ')
     result = ''
     if st.button('Predict'):
         result = predict_heart_disease(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal)
